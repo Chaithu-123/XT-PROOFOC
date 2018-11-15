@@ -1,0 +1,34 @@
+{
+    "ShoppingBag": [{
+            "Name": "Formal Black Pant",
+            "Image1": "../src/images/blackpant.jpg",
+            "Image2": "../src/images/blackpant1.jpg",
+            "ProdCode": "232321939",
+            "Size": "XL",
+            "Quantity": "4",
+            "Price": "26.00",
+            "Color": "Black"
+        },
+        {
+            "Name": "Formal Red Pant",
+            "Image1": "../src/images/redpant.jpg",
+            "Image2": "../src/images/redpant1.jpg",
+            "ProdCode": "352321939",
+            "Size": "XXL",
+            "Quantity": "4",
+            "Price": "30.00",
+            "Color": "Red"
+        },
+        {
+            "Name": "Formal White Pant",
+            "Image1": "../src/images/whitepant.jpg",
+            "Image2": "../src/images/whitepant1.jpg",
+            "ProdCode": "452321939",
+            "Size": "L",
+            "Quantity": "4",
+            "Price": "13.00",
+            "Color": "White"
+        }
+
+    ]
+}

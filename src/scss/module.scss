@@ -1,0 +1,18 @@
+.nav {
+    a {
+        background: red;
+        height: 100px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media only screen and (min-device-width: 768px) {
+    #searchmoviesContent {
+        #search-movies {
+            .row {
+                min-height: 16rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cart Application</title>
+    <link rel="icon" href="src/images/ecom.png" type="image/png" sizes="16x16">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <h1>YOUR SHOPPING BAG</h1>
+    </header>
+    <hr>
+    <div class="tlist">
+        <div>Items</div>
+        <div class="slist">
+            <div class="l1">SIZE</div>
+            <div class="l2">QTY</div>
+            <div>PRICE</div>
+        </div>
+    </div>
+
+
+    <main>
+        <div id="cart_details">
+
+        </div>
+        <div id="cart_price"></div>
+    </main>
+    <!-- modal -->
+
+    <div class="modal fade" id="itemView" tabindex="-1" role="dialog" aria-labelledby="itemView" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-light">
+                    <h5 class="modal-title" id="itemModal">CART</h5>
+                    <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-row">
+                        <div class="col-md-12 col-sm-12 mb-1">
+                            <h1> <label id="prodName"></label></h1><br>
+                            <label id="lbl_mName"></label><br>
+                            <label id="prodSize"></label><br>
+                            <label id="prodPrice"></label>
+                            <div class="quant">QTY
+                                <input type="number" value="4" min="1" class="quantity-field">
+                            </div>
+
+                        </div>
+                        <!-- <div class="col-md-12 col-sm-12 mb-1">
+                            <img class="itemImage" src="#" alt="Pant" width="300" height="300" />
+                        </div> -->
+                        <div class="container">
+                            <div class="row blog">
+                                <div class="col-md-12">
+                                    <div id="blogCarousel" class="carousel slide" data-ride="carousel">
+
+                                        <ol class="carousel-indicators">
+                                            <li data-target="#blogCarousel" data-slide-to="0" class="active"></li>
+                                            <li data-target="#blogCarousel" data-slide-to="1"></li>
+                                        </ol>
+
+                                        <!-- Carousel items -->
+                                        <div class="carousel-inner">
+
+                                            <div class="carousel-item active">
+                                                <div class="row">
+                                                    <div class="col-md-3">
+                                                        <img class="im1" src="" alt="Image" width="300" height="300" />
+                                                    </div>
+                                                </div>
+                                                <!--.row-->
+                                            </div>
+                                            <!--.item-->
+
+                                            <div class="carousel-item">
+                                                <div class="row">
+                                                    <div class="col-md-3">
+                                                        <a href="#">
+                                                            <img class="im2" src="#" alt="Image1" width="300" height="300">
+                                                        </a>
+                                                    </div>
+
+                                                </div>
+                                                <!--.row-->
+                                            </div>
+                                            <!--.item-->
+
+                                        </div>
+                                        <!--.carousel-inner-->
+                                    </div>
+                                    <!--.Carousel-->
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</body>
+
+</html>
