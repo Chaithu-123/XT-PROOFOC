@@ -74,21 +74,3 @@ $.getJSON(url, function(data) {
     });
 
 });
-
-
-$(document).ready(function() {
-    $("#itemview").modal('show');
-
-});
-// $.getJSON(`http://localhost:3000/ShoppingBag/${id}`, function(data) {
-
-
-// });
-// function removeItem(removeButton) {
-//     var productRow = $(removeButton).parent().parent();
-//     console.log(removeButton);
-//     productRow.slideUp(function() {
-//         productRow.remove();
-
-//     });
-// }
