@@ -8,45 +8,59 @@ window.$ = $
 
 const url = 'http://localhost:3000/ShoppingBag';
 
+function createHTMLElement(htmlString) {
+    const template = document.createElement('template');
+    template.innerHTML = htmlString;
+    return template.content.firstElementChild;
+}
 
 $.getJSON(url, function(data) {
-    var cart_details = document.getElementById('cart_details');
-
-    cart_details.innerHTML = "";
+    const cartDetailsRef = document.getElementById('cart_details');
     data.forEach(citem => {
-        cart_details.innerHTML += `
-        <div class="column-labels">
-                <label class="product-image">Image</label>
-                <label class="product-details">Product</label>
-                <label class="product-price">Price</label>
-                <label class="product-size">size</label>
-                <label class="product-quantity">Quantity</label>
+        const productRef = createHTMLElement(`
+        <div id = "${citem.id}">
+                    <div class="column-labels">
+                        <label class="product-image">Image</label>
+                        <label class="product-details">Product</label>
+                        <label class="product-price">Price</label>
+                        <label class="product-size">size</label>
+                        <label class="product-quantity">Quantity</label>
+                    </div>
+                    <div class="shopping-cart">  
+                    <div class="product">
+                        <div class="product-image">
+                            <img class="cImg1" src="${citem.Image1}" alt="Placholder" class="product-frame"/>
+                            <img class="cImg2" src="${citem.Image2}" alt="placeholder" style="display: none;"/>
+                        </div>
+                        <div class="product-details">
+                        <div class="product-title">${citem.Name}</div>
+                            <p class="product-description">Product Code - ${citem.ProdCode}</p>
+                            <p class="product-id">Product Id-${citem.id}</p>
+                            <div class="remove">
+                                <button class="cart_edit" id="edit_${citem.id}">Edit</button>
+                                <button class="cart_remove" id="remove_${citem.id}">Remove</button>
+                                <button class="cart_save">Save For Later</button>
+                            </div> 
+                        </div>
+                        <div class="product-price">${citem.Price}</div>
+                        <div class="product-size">${citem.Size}</div>
+                        <div class="product-quantity">
+                            <input type="number" value="1" min="1" class="quantity-field">
+                        </div>    
+                    </div>    
+                </div>      
             </div>
-        <div class="shopping-cart">  
-         <div class="product">
-    <div class="product-image">
-      <img class="cImg1" src="${citem.Image1}" alt="Placholder" class="product-frame"/>
-       <img class="cImg2" src="${citem.Image2}" alt="placeholder" style="display: none;"/>
-    </div>
-    <div class="product-details">
-      <div class="product-title">${citem.Name}</div>
-      <p class="product-description">Product Code - ${citem.ProdCode}</p>
-      <p class="product-id">Product Id-${citem.id}</p>
-      <div class="remove">
-                           <button class="cart_edit">Edit</button>
-                    <button class="cart_remove">Remove</button>
-                    <button class="cart_save">Save For Later</button>
-                </div> 
-    </div>
-    <div class="product-price">${citem.Price}</div>
-    <div class="product-size">${citem.Size}</div>
-    <div class="product-quantity">
-      <input type="number" value="1" min="1" class="quantity-field">
-    </div>    
-    </div>    
-  </div>      
-</div>
-                    `
+        </div>`);
+
+
+        const ref = productRef.querySelector(`#remove_${citem.id}`).addEventListener('click', (event) => {
+            const id = event.target.id.split('_')[1];
+            const parentElementRef = document.getElementById('cart_details');
+            const childElementRef = document.getElementById(id);
+            parentElementRef.removeChild(childElementRef);
+        });
+
+        cartDetailsRef.appendChild(productRef);
     })
     $(".cart_edit").click(function(e) {
 
@@ -59,12 +73,6 @@ $.getJSON(url, function(data) {
         $("#itemView").modal('show');
     });
 
-
-    $(document).ready(function() {
-        $(".cart_remove").click(function() {
-            $("div").remove("");
-        });
-    });
 });
 
 
@@ -72,10 +80,10 @@ $(document).ready(function() {
     $("#itemview").modal('show');
 
 });
+// $.getJSON(`http://localhost:3000/ShoppingBag/${id}`, function(data) {
 
 
-
-
+// });
 // function removeItem(removeButton) {
 //     var productRow = $(removeButton).parent().parent();
 //     console.log(removeButton);
