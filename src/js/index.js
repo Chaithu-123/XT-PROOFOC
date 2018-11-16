@@ -4,20 +4,17 @@ import "../scss/layout.scss"
 import "../scss/module.scss"
 import "../../node_modules/bootstrap/dist/js/bootstrap"
 import $ from "jquery"
+import { createHTMLElement } from "../js/service"
 window.$ = $
 
 const url = 'http://localhost:3000/ShoppingBag';
 
-function createHTMLElement(htmlString) {
-    const template = document.createElement('template');
-    template.innerHTML = htmlString;
-    return template.content.firstElementChild;
-}
+
 
 $.getJSON(url, function(data) {
-    const cartDetailsRef = document.getElementById('cart_details');
+    const cartDetails = document.getElementById('cart_details');
     data.forEach(citem => {
-        const productRef = createHTMLElement(`
+        const sCart = createHTMLElement(`
         <div id = "${citem.id}">
                     <div class="column-labels">
                         <label class="product-image">Image</label>
@@ -33,7 +30,7 @@ $.getJSON(url, function(data) {
                             <img class="cImg2" src="${citem.Image2}" alt="placeholder" style="display: none;"/>
                         </div>
                         <div class="product-details">
-                        <div class="product-title">${citem.Name}</div>
+                        <div class="product-title"><h2>${citem.Name}</h2></div>
                             <p class="product-description">Product Code - ${citem.ProdCode}</p>
                             <p class="product-id">Product Id-${citem.id}</p>
                             <div class="remove">
@@ -45,7 +42,7 @@ $.getJSON(url, function(data) {
                         <div class="product-price">${citem.Price}</div>
                         <div class="product-size">${citem.Size}</div>
                         <div class="product-quantity">
-                            <input type="number" value="1" min="1" class="quantity-field">
+                            <input type="number" value="1" min="1" class="quantity-field" aria-label="QTY">
                         </div>    
                     </div>    
                 </div>      
@@ -53,14 +50,14 @@ $.getJSON(url, function(data) {
         </div>`);
 
 
-        const ref = productRef.querySelector(`#remove_${citem.id}`).addEventListener('click', (event) => {
+        const ref = sCart.querySelector(`#remove_${citem.id}`).addEventListener('click', (event) => {
             const id = event.target.id.split('_')[1];
-            const parentElementRef = document.getElementById('cart_details');
+            const pRef = document.getElementById('cart_details');
             const childElementRef = document.getElementById(id);
-            parentElementRef.removeChild(childElementRef);
+            pRef.removeChild(childElementRef);
         });
 
-        cartDetailsRef.appendChild(productRef);
+        cartDetails.appendChild(sCart);
     })
     $(".cart_edit").click(function(e) {
 
