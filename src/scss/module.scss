@@ -1,17 +1,67 @@
-.nav {
-    a {
-        background: red;
-        height: 100px;
-        display: flex;
-        justify-content: space-between;
+$color-border: rgb(247, 228, 228);
+@media screen and (max-width: 650px) {
+    .shopping-cart {
+        margin: 0;
+        padding-top: 20px;
+        border-top: 1px solid $color-border;
+    }
+    .column-labels {
+        display: none;
+    }
+    .product-image {
+        float: right;
+        width: auto;
+        img {
+            margin: 0 0 10px 10px;
+        }
+    }
+    .product-details {
+        float: none;
+        margin-bottom: 10px;
+        width: auto;
+    }
+    .product-price {
+        clear: both;
+        width: 70px;
+    }
+    .product-quantity {
+        width: 100px;
+        input {
+            margin-left: 20px;
+        }
+    }
+    .product-quantity:before {
+        content: 'x';
+    }
+    .product-removal {
+        width: auto;
+    }
+    .product-line-price {
+        float: right;
+        width: 70px;
     }
 }
 
-@media only screen and (min-device-width: 768px) {
-    #searchmoviesContent {
-        #search-movies {
-            .row {
-                min-height: 16rem;
+@media screen and (max-width: 350px) {
+    .product-removal {
+        float: right;
+    }
+    .product-line-price {
+        float: right;
+        clear: left;
+        width: auto;
+        margin-top: 10px;
+    }
+    .product .product-line-price:before {
+        content: 'Item Total: $';
+    }
+    .totals {
+        .totals-item {
+            label {
+                width: 60%;
+            }
+            .totals-value {
+                width: 40%;
             }
         }
     }

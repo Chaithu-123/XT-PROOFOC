@@ -15,105 +15,135 @@
         <h1>YOUR SHOPPING BAG</h1>
     </header>
     <hr>
-    <div class="tlist">
-        <div>Items</div>
-        <div class="slist">
-            <div class="l1">SIZE</div>
-            <div class="l2">QTY</div>
-            <div>PRICE</div>
-        </div>
-    </div>
-
-
     <main>
         <div id="cart_details">
-
         </div>
-        <div id="cart_price"></div>
-    </main>
-    <!-- modal -->
+        <div class="price">
+            <div class="totals">
+                <div class="totals-item">
+                    <label>Subtotal</label>
+                    <div class="totals-value" id="cart-subtotal">71.97</div>
+                </div>
+                <div class="totals-item">
+                    <label>Tax (5%)</label>
+                    <div class="totals-value" id="cart-tax">3.60</div>
+                </div>
+                <div class="totals-item">
+                    <label>Shipping</label>
+                    <div class="totals-value" id="cart-shipping">15.00</div>
+                </div>
+                <div class="totals-item totals-item-total">
+                    <label>Grand Total</label>
+                    <div class="totals-value" id="cart-total">90.57</div>
+                </div>
+            </div>
+            <button class="checkout">Checkout</button>
+        </div>
 
-    <div class="modal fade" id="itemView" tabindex="-1" role="dialog" aria-labelledby="itemView" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+    </main>
+
+
+    <!-- modal -->
+    <div class="modal fade bd-example-modal-lg" id="itemView" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <div class="modal-header bg-dark text-light">
-                    <h5 class="modal-title" id="itemModal">CART</h5>
-                    <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <div class="modal-header">
+                    <h5 class="modal-title h4" id="myLargeModalLabel">CART</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
                 </div>
                 <div class="modal-body">
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="row">
+                                <div class="col-10 offset-1 text-center">
+                                    <hr style="border: none;height: 6px;color:rgba(0, 0, 0, 0.1);background-color:rgba(0, 0, 0, 0.1)">
+                                    <br>
+                                    <span id="prodName">PAISLEY JEANS</span>
+                                    <br>
+                                    <h2 id="prodPrice" style="font-size: 3rem">w</h2>
+                                    <br><br>
+                                    <span style="font-size: .8rem"></span>
+                                    <br>
+                                    <table style="margin:auto;width:52px">
+                                        <tr>
+                                            <td style="background-color: red;height:20px"></td>
+                                            <td style="background-color: blue;height:20px"></td>
+                                        </tr>
+                                    </table>
+                                    <br><br>
+                                    <select style="width:80px;height:40px">
+                                        <option>Size</option>
+                                        <option>S</option>
+                                        <option>M</option>
+                                        <option>L</option>
+                                        <option>XL</option>
+                                        <option>XXL</option>
+                                    </select>
 
-                    <div class="form-row">
-                        <div class="col-md-12 col-sm-12 mb-1">
-                            <h1> <label id="prodName"></label></h1><br>
-                            <label id="lbl_mName"></label><br>
-                            <label id="prodSize"></label><br>
-                            <label id="prodPrice"></label>
-                            <div class="quant">QTY
-                                <input type="number" value="4" min="1" class="quantity-field">
-                            </div>
+                                    <input type="number" name="firstname" placeholder="QTY" style="width:80px;height:40px">
 
-                        </div>
-                        <!-- <div class="col-md-12 col-sm-12 mb-1">
-                            <img class="itemImage" src="#" alt="Pant" width="300" height="300" />
-                        </div> -->
-                        <div class="container">
-                            <div class="row blog">
-                                <div class="col-md-12">
-                                    <div id="blogCarousel" class="carousel slide" data-ride="carousel">
-
-                                        <ol class="carousel-indicators">
-                                            <li data-target="#blogCarousel" data-slide-to="0" class="active"></li>
-                                            <li data-target="#blogCarousel" data-slide-to="1"></li>
-                                        </ol>
-
-                                        <!-- Carousel items -->
-                                        <div class="carousel-inner">
-
-                                            <div class="carousel-item active">
-                                                <div class="row">
-                                                    <div class="col-md-3">
-                                                        <img class="im1" src="" alt="Image" width="300" height="300" />
-                                                    </div>
-                                                </div>
-                                                <!--.row-->
-                                            </div>
-                                            <!--.item-->
-
-                                            <div class="carousel-item">
-                                                <div class="row">
-                                                    <div class="col-md-3">
-                                                        <a href="#">
-                                                            <img class="im2" src="#" alt="Image1" width="300" height="300">
-                                                        </a>
-                                                    </div>
-
-                                                </div>
-                                                <!--.row-->
-                                            </div>
-                                            <!--.item-->
-
-                                        </div>
-                                        <!--.carousel-inner-->
-                                    </div>
-                                    <!--.Carousel-->
-
+                                    <br><br>
+                                    <button class="btn btn-primary btn-lg" style="border-radius: 0px;width:10.6rem;height:3.1rem">ADD
+                                        TO BAG</button>
+                                    <br><br>
+                                    <a href="#" style="font-size: .7rem">See product details</a>
                                 </div>
                             </div>
                         </div>
+                        <div class="col-7">
 
+                            <div class="container">
+                                <div class="row blog">
+                                    <div class="col-md-12">
+                                        <div id="blogCarousel" class="carousel slide" data-ride="carousel">
 
+                                            <ol class="carousel-indicators">
+                                                <li data-target="#blogCarousel" data-slide-to="0" class="active"></li>
+                                                <li data-target="#blogCarousel" data-slide-to="1"></li>
+                                            </ol>
+
+                                            <!-- Carousel items -->
+                                            <div class="carousel-inner">
+
+                                                <div class="carousel-item active">
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <img class="im1" src="#" alt="Image" width="300" height="300" />
+                                                        </div>
+                                                    </div>
+                                                    <!--.row-->
+                                                </div>
+                                                <!--.item-->
+
+                                                <div class="carousel-item">
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <a href="#">
+                                                                <img class="im2" src="#" alt="Image1" width="300" height="300">
+                                                            </a>
+                                                        </div>
+
+                                                    </div>
+                                                    <!--.row-->
+                                                </div>
+                                                <!--.item-->
+
+                                            </div>
+                                            <!--.carousel-inner-->
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
                 </div>
-
             </div>
+
         </div>
     </div>
-
-
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </body>
 

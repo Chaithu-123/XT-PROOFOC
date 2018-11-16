@@ -1,5 +1,6 @@
 {
     "ShoppingBag": [{
+            "id": "1",
             "Name": "Formal Black Pant",
             "Image1": "../src/images/blackpant.jpg",
             "Image2": "../src/images/blackpant1.jpg",
@@ -10,6 +11,7 @@
             "Color": "Black"
         },
         {
+            "id": "2",
             "Name": "Formal Red Pant",
             "Image1": "../src/images/redpant.jpg",
             "Image2": "../src/images/redpant1.jpg",
@@ -20,6 +22,7 @@
             "Color": "Red"
         },
         {
+            "id": "3",
             "Name": "Formal White Pant",
             "Image1": "../src/images/whitepant.jpg",
             "Image2": "../src/images/whitepant1.jpg",
@@ -28,6 +31,39 @@
             "Quantity": "4",
             "Price": "13.00",
             "Color": "White"
+        },
+        {
+            "id": "4",
+            "Name": "Formal Yellow Pant",
+            "Image1": "../src/images/yellowpant.jpg",
+            "Image2": "../src/images/yellowpant1.jpg",
+            "ProdCode": "58921939",
+            "Size": "XXL",
+            "Quantity": "4",
+            "Price": "33.00",
+            "Color": "yellow"
+        },
+        {
+            "id": "5",
+            "Name": "Formal Green Pant",
+            "Image1": "../src/images/greenpant.jpg",
+            "Image2": "../src/images/greenpant1.jpg",
+            "ProdCode": "9392586",
+            "Size": "XXL",
+            "Quantity": "4",
+            "Price": "58.00",
+            "Color": "Green"
+        },
+        {
+            "id": "6",
+            "Name": "Formal Blue Pant",
+            "Image1": "../src/images/bluepant.jpg",
+            "Image2": "../src/images/bluepant1.jpg",
+            "ProdCode": "101245789",
+            "Size": "XXL",
+            "Quantity": "4",
+            "Price": "39.00",
+            "Color": "Blue"
         }
 
     ]
